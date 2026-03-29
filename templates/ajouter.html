@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajouter une réservation</title>
+</head>
+
+<body>
+
+<h1>Ajouter une réservation</h1>
+
+<form method="POST">
+
+    <label>Prénom :</label>
+    <select name="prenom" required>
+
+        <option value="Zia">Zia</option>
+        <option value="Lio">Lio</option>
+        <option value="Viviane">Viviane</option>
+        <option value="Steph">Steph</option>
+
+    </select>
+
+    <br><br>
+
+    <label>Date début :</label>
+    <input type="date" name="date_debut" required>
+
+    <br><br>
+
+    <label>Date fin :</label>
+    <input type="date" name="date_fin" required>
+
+    <br><br>
+
+    <label>Commentaire :</label>
+    <input type="text" name="commentaire">
+
+    <br><br>
+
+    <button type="submit">
+        Enregistrer la réservation
+    </button>
+
+</form>
+
+<br>
+
+<a href="/">
+Retour au planning
+</a>
+
+</body>
+</html>

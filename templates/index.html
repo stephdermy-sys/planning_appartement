@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Planning de l'appartement</title>
+
+<style>
+
+body {
+    font-family: Arial;
+}
+
+table {
+    border-collapse: collapse;
+    width: 95%;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+th a:hover {
+    text-decoration: underline;
+}
+
+/* Couleurs par personne */
+
+.Zia {
+    background-color: pink;
+}
+
+.Lio {
+    background-color: lightblue;
+}
+
+.Viviane {
+    background-color: lightgreen;
+}
+
+.Steph {
+    background-color: yellow;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Planning de l'appartement</h1>
+
+<a href="/ajouter">
+Ajouter une réservation
+</a>
+
+<br><br>
+
+<table>
+
+<tr>
+
+<th>
+<a href="/?tri=prenom">
+Prénom
+</a>
+</th>
+
+<th>
+<a href="/?tri=date">
+Date début
+</a>
+</th>
+
+<th>
+Date fin
+</th>
+
+<th>
+Commentaire
+</th>
+
+<th>
+<a href="/?tri=statut">
+Statut
+</a>
+</th>
+
+<th>
+Actions
+</th>
+
+</tr>
+
+{% for r in reservations %}
+
+<tr class="{{ r.prenom }}">
+
+<td>
+{{ r.prenom }}
+</td>
+
+<td>
+{{ r.date_debut }}
+</td>
+
+<td>
+{{ r.date_fin }}
+</td>
+
+<td>
+{{ r.commentaire }}
+</td>
+
+<td>
+{{ r.statut }}
+</td>
+
+<td>
+
+<a href="/annuler/{{ r.id }}">
+Annuler
+</a>
+
+|
+
+<a href="/supprimer/{{ r.id }}">
+Supprimer
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>
